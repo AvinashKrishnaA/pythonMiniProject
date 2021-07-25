@@ -1,19 +1,29 @@
-def binary_search(lst, n):
+"""This module contains Binary search function execution """
+
+
+def binary_search(lst, numb):
+    """ This function takes two parameters
+    1. list of numbers in which number should be searched
+    2. number to be searched
+    This function returns a bool"""
     lst.sort()
     first = 0
     last = len(lst) - 1
     mid = (first + last) // 2
+    result = False
     while first <= last:
         mid = (first + last) // 2
-        if lst[mid] == n:
+        if lst[mid] == numb:
             print(f"found at location {mid}")
-            return True
+            result = True
         else:
-            if n < lst[mid]:
+            if numb < lst[mid]:
                 last = mid - 1
             else:
                 first = mid + 1
     print("Not found")
+    if result:
+        return True
     return False
 
 
